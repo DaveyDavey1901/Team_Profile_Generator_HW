@@ -36,8 +36,8 @@ function managerCard(manager) {
     <ul class="list-group list-group-flush">
     <li class="list-group-item">Role: Manager</li>
         <li class="list-group-item">ID: ${manager.id}</li>
+        <li class="list-group-item">Email: <a href="mailto:${manager.email}">${manager.email}</a></li>
         <li class="list-group-item">Office Number: ${manager.officeNumber}</li>
-         <li class="list-group-item">Email: <a href="mailto:${manager.email}">${manager.email}</a></li>
         </ul>
         </div>
    </div>
