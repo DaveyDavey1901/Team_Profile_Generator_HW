@@ -11,6 +11,11 @@
   8. [E-mail](#E-mail)
 ## :small_blue_diamond:Description
 This homework project required you to build a Node.js command-line application.  It had to take in user input in response to questions about the team to be generated and then would build a html page to display them in the form of employee cards. 
+
+|<img src="https://drive.google.com/file/d/1IaGvWeAOZTYlo8g9y8wKmVUnVfp0OVLf/view?usp=sharing" width="600">| 
+
+:file_folder:[Click Here to View the output HTML File from video]()
+
 ## :small_blue_diamond:Installation
 To install first clone the repo.  Then install npm init, npm i inquirer.  You will then be able to run it by making sure you are in the folder with the index.js and running node index.js. Then simple follow the instructions / questions and your html page will be generated.
 ## :small_blue_diamond:Usage
