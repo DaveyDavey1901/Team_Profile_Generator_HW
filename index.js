@@ -192,7 +192,8 @@ const newIntern = () => {
         name: "name",
         message: "What is the name of the intern?",
         validate: (internName) => {
-          if (internName_1) {
+          if (internName
+          ) {
             return true;
           } else {
             console.log("Please enter the name of the intern!");
