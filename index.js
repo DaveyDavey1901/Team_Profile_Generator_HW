@@ -11,8 +11,8 @@ const Intern = require("./lib/Intern");
 // Array to push to
 const teamArray = [];
 
-const userTeamBuildMenu = () => {
-  return inquirer
+const userTeamBuildMenu = async () => {
+  const userJobChoice = await inquirer
     .prompt([
       {
         type: "list",
@@ -25,34 +25,32 @@ const userTeamBuildMenu = () => {
           "finish building my team",
         ],
       },
-    ])
-    .then((userJobChoice) => {
-      switch (userJobChoice.menu) {
-        case "add manager":
-          newManager();
-          break;
-        case "add engineer":
-          newEngineer();
-          break;
-        case "add intern":
-          newIntern();
-          break;
-        default:
-          createTeam();
-      }
-    });
+    ]);
+  switch (userJobChoice.menu) {
+    case "add manager":
+      newManager();
+      break;
+    case "add engineer":
+      newEngineer();
+      break;
+    case "add intern":
+      newIntern();
+      break;
+    default:
+      createTeam();
+  }
 };
 
 //questions for manager
-const newManager = () => {
-  return inquirer
+const newManager = async () => {
+  const userInput = await inquirer
     .prompt([
       {
         type: "input",
         name: "name",
         message: "What is your name?",
-        validate: (nameInput) => {
-          if (nameInput) {
+        validate: (nameInput_1) => {
+          if (nameInput_1) {
             return true;
           } else {
             console.log("Please enter your name!");
@@ -64,8 +62,8 @@ const newManager = () => {
         type: "input",
         name: "employeeId",
         message: "Please enter your employee ID",
-        validate: (employeeId) => {
-          if (employeeId) {
+        validate: (employeeId_1) => {
+          if (employeeId_1) {
             return true;
           } else {
             console.log("Please enter your employee ID!");
@@ -77,8 +75,8 @@ const newManager = () => {
         type: "input",
         name: "email",
         message: "please enter your email address",
-        validate: (email) => {
-          if (email) {
+        validate: (email_1) => {
+          if (email_1) {
             return true;
           } else {
             console.log("Please enter your email address!");
@@ -90,8 +88,8 @@ const newManager = () => {
         type: "input",
         name: "officeNumber",
         message: " please enter your office number",
-        validate: (officeNumber) => {
-          if (officeNumber) {
+        validate: (officeNumber_1) => {
+          if (officeNumber_1) {
             return true;
           } else {
             console.log("Please enter your office number!");
@@ -99,30 +97,28 @@ const newManager = () => {
           }
         },
       },
-    ])
-    .then((userInput) => {
-      console.log(userInput);
-      const manager = new Manager(
-        userInput.name,
-        userInput.employeeId,
-        userInput.email,
-        userInput.officeNumber
-      );
-      teamArray.push(manager);
-      userTeamBuildMenu();
-    });
+    ]);
+  console.log(userInput);
+  const manager = new Manager(
+    userInput.name,
+    userInput.employeeId,
+    userInput.email,
+    userInput.officeNumber
+  );
+  teamArray.push(manager);
+  userTeamBuildMenu();
 };
 
 // questions for an engineer
-const newEngineer = () => {
-  return inquirer
+const newEngineer = async () => {
+  const userInput = await inquirer
     .prompt([
       {
         type: "input",
         name: "name",
         message: "What is the name of the engineer?",
-        validate: (engineerName) => {
-          if (engineerName) {
+        validate: (engineerName_1) => {
+          if (engineerName_1) {
             return true;
           } else {
             console.log("Please enter the name of the engineer!");
@@ -134,8 +130,8 @@ const newEngineer = () => {
         type: "input",
         name: "employeeId",
         message: "Please enter engineer employee ID ",
-        validate: (employeeId) => {
-          if (employeeId) {
+        validate: (employeeId_1) => {
+          if (employeeId_1) {
             return true;
           } else {
             console.log("Please enter engineer employee ID!");
@@ -147,8 +143,8 @@ const newEngineer = () => {
         type: "input",
         name: "email",
         message: "Please enter contact email address",
-        validate: (email) => {
-          if (email) {
+        validate: (email_1) => {
+          if (email_1) {
             return true;
           } else {
             console.log("Please enter contact email address!");
@@ -160,8 +156,8 @@ const newEngineer = () => {
         type: "input",
         name: "githubUsername",
         message: "Please Enter your Github username.",
-        validate: (githubUsername) => {
-          if (githubUsername) {
+        validate: (githubUsername_1) => {
+          if (githubUsername_1) {
             return true;
           } else {
             console.log("Please enter your Github username!");
@@ -169,31 +165,28 @@ const newEngineer = () => {
           }
         },
       },
-    ])
-    .then((userInput) => {
-      console.log(userInput);
-      const engineer = new Engineer(
-        userInput.name,
-        userInput.employeeId,
-        userInput.email,
-        userInput.githubUsername
-      );
-      teamArray.push(engineer);
-      userTeamBuildMenu();
-    });
+    ]);
+  console.log(userInput);
+  const engineer = new Engineer(
+    userInput.name,
+    userInput.employeeId,
+    userInput.email,
+    userInput.githubUsername
+  );
+  teamArray.push(engineer);
+  userTeamBuildMenu();
 };
 
 //new intern questions
-const newIntern = () => {
-  return inquirer
+const newIntern = async () => {
+  const userInput = await inquirer
     .prompt([
       {
         type: "input",
         name: "name",
         message: "What is the name of the intern?",
-        validate: (internName) => {
-          if (internName
-          ) {
+        validate: (internName_1) => {
+          if (internName_1) {
             return true;
           } else {
             console.log("Please enter the name of the intern!");
@@ -205,8 +198,8 @@ const newIntern = () => {
         type: "input",
         name: "employeeId",
         message: "Enter your Intern employee ID ",
-        validate: (employeeId) => {
-          if (employeeId) {
+        validate: (employeeId_1) => {
+          if (employeeId_1) {
             return true;
           } else {
             console.log("Please enter Intern employee ID!");
@@ -218,8 +211,8 @@ const newIntern = () => {
         type: "input",
         name: "email",
         message: "Enter email address please",
-        validate: (email) => {
-          if (email) {
+        validate: (email_1) => {
+          if (email_1) {
             return true;
           } else {
             console.log("Please enter email address!");
@@ -231,8 +224,8 @@ const newIntern = () => {
         type: "input",
         name: "school",
         message: "Please enter your school name.",
-        validate: (school) => {
-          if (school) {
+        validate: (school_1) => {
+          if (school_1) {
             return true;
           } else {
             console.log("Please enter your school name!");
@@ -240,18 +233,16 @@ const newIntern = () => {
           }
         },
       },
-    ])
-    .then((userInput) => {
-      console.log(userInput);
-      const intern = new Intern(
-        userInput.name,
-        userInput.employeeId,
-        userInput.email,
-        userInput.school
-      );
-      teamArray.push(intern);
-      userTeamBuildMenu();
-    });
+    ]);
+  console.log(userInput);
+  const intern = new Intern(
+    userInput.name,
+    userInput.employeeId,
+    userInput.email,
+    userInput.school
+  );
+  teamArray.push(intern);
+  userTeamBuildMenu();
 };
 
 //create a html file from the data inputed and combined with the createHTML file
