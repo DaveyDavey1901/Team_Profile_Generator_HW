@@ -61,7 +61,7 @@ const newManager = async () => {
       {
         type: "input",
         name: "employeeId",
-        message: "Please enter your employee ID",
+        message: "What is your employee ID?",
         validate: (employeeId_1) => {
           if (employeeId_1) {
             return true;
@@ -74,7 +74,7 @@ const newManager = async () => {
       {
         type: "input",
         name: "email",
-        message: "please enter your email address",
+        message: "What is your email address?",
         validate: (email_1) => {
           if (email_1) {
             return true;
@@ -87,7 +87,7 @@ const newManager = async () => {
       {
         type: "input",
         name: "officeNumber",
-        message: " please enter your office number",
+        message: " What is your office number?",
         validate: (officeNumber_1) => {
           if (officeNumber_1) {
             return true;
@@ -129,7 +129,7 @@ const newEngineer = async () => {
       {
         type: "input",
         name: "employeeId",
-        message: "Please enter engineer employee ID ",
+        message: "What is the engineer employee ID ",
         validate: (employeeId_1) => {
           if (employeeId_1) {
             return true;
@@ -142,7 +142,7 @@ const newEngineer = async () => {
       {
         type: "input",
         name: "email",
-        message: "Please enter contact email address",
+        message: "What is the contact email address",
         validate: (email_1) => {
           if (email_1) {
             return true;
@@ -155,12 +155,12 @@ const newEngineer = async () => {
       {
         type: "input",
         name: "githubUsername",
-        message: "Please Enter your Github username.",
+        message: "What is the engineers Github username.",
         validate: (githubUsername_1) => {
           if (githubUsername_1) {
             return true;
           } else {
-            console.log("Please enter your Github username!");
+            console.log("Please enter engineers Github username!");
             return false;
           }
         },
@@ -197,7 +197,7 @@ const newIntern = async () => {
       {
         type: "input",
         name: "employeeId",
-        message: "Enter your Intern employee ID ",
+        message: "What is the Intern employee ID ",
         validate: (employeeId_1) => {
           if (employeeId_1) {
             return true;
@@ -210,7 +210,7 @@ const newIntern = async () => {
       {
         type: "input",
         name: "email",
-        message: "Enter email address please",
+        message: "WHat is the interns email address please",
         validate: (email_1) => {
           if (email_1) {
             return true;
@@ -223,7 +223,7 @@ const newIntern = async () => {
       {
         type: "input",
         name: "school",
-        message: "Please enter your school name.",
+        message: "What is the interns school name.",
         validate: (school_1) => {
           if (school_1) {
             return true;
@@ -248,7 +248,7 @@ const newIntern = async () => {
 //create a html file from the data inputed and combined with the createHTML file
 function createTeam() {
   const createContent = createHTML(teamArray);
-    fs.writeFile("./output/index.html", createContent, (err) =>
+    fs.writeFile("./dist/index.html", createContent, (err) =>
     err
       ? console.log(err)
       : console.log("Your Team has been successfully created")
