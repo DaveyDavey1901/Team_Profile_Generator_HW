@@ -25,7 +25,7 @@ function createHTML(emptyArray) {
 // create a manager info card
 function managerCard(manager) {
   return `
-    <div class="card col-lg-3 col-md-4 col-sm-3">
+    <div class="card" style="max-width: 18rem;">
      <div class="card-body shadow d-flex 
             justify-content-center
             align-items-center p-3 bg-primary rounded-lg
@@ -47,7 +47,7 @@ function managerCard(manager) {
 // create an engineer info card
 function engineerCard(engineer) {
   return `
-         <div class="card col-lg-3 col-md-4 col-sm-3">
+         <div class="card" style="max-width: 18rem;">
      <div class="card-body shadow d-flex 
             justify-content-center
             align-items-center p-3 bg-danger rounded-lg
@@ -71,7 +71,7 @@ function engineerCard(engineer) {
 // create intern card
 function internCard(intern) {
   return `
-       <div class="card col-lg-3 col-md-4 col-sm-3">
+       <div class="card" style="max-width: 18rem;">
      <div class="card-body shadow d-flex 
             justify-content-center
             align-items-center p-3 bg-warning rounded-lg
